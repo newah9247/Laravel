@@ -1,12 +1,10 @@
 <nav>
     <img href="logo.png">
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Work Examples</a></li>
-        <li><a href="">Resume</a></li>
-        <li><a href="">Narrative</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="">Entry Form</a></li>
+        <li><a href="">Parade Form</a></li>
+        <li><a href="">Vendor Form</a></li>
+        <li><a href="">Sponsor Form</a></li>
     </ul>
 </nav>
 
@@ -16,10 +14,10 @@
         background-color: #B70F0A;
         color: white;
         text-align: right;
-        padding: .5rem;    
+        padding: .7rem;    
+      
     }
 
-    navbar styles
     nav ul {
             margin: 0;
             padding: 0;

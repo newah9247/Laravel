@@ -60,5 +60,12 @@
         }
     </style>
     {{-- blade-formatter-enable --}}
+    @yield('signature')
+
+    @yield('etransfer')
+
+    @yield('comments')
+
+    @yield('footer')
 </body>
 </html>
