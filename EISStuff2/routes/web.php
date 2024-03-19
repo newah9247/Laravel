@@ -7,5 +7,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::post('/', function () {
-    return view('submission');
+    return view('index_submission');
 })->name('submission');
+
+

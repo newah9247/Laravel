@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Tailwind CSS & AlpineJS -->
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/index.css') }}" />
+
+    <!-- Tailwind CSS & AlpineJS & Ajax -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <title>Non-Livestock</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!--JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('/public/js/signature.js') }}"></script>
+    <script src="{{ asset('/public/js/addForms.js') }}"></script>
+
+    
+
+    <title>Non-Livestock Entry Form</title>
 </head>
 <body>
     @yield('nav')
@@ -16,56 +27,15 @@
     @yield('styles')
     @yield('title')
     @yield('content')
-    
-    <!--Styles go here-->
-    <style type="text/tailwindcss">
-        
-        /* Header Styles */
-        h1 {
-            @apply text-4xl font-bold text-slate-900 flex justify-center
-        }
-
-        h2 {
-            @apply text-xl font-medium text-slate-700 flex justify-center
-        }
-
-        h3 {
-            @apply text-xl text-slate-700 flex justify-center
-        }
-
-        /*Tag Styles*/
-        label {
-            @apply  text-black  font-medium 
-        }
-
-        body {
-            background-color: #EBEBEB;
-        }
-
-        footer {
-            @apply bg-slate-900 text-white text-center p-3 absolute bottom-0 w-full
-        }
-
-        /* Div Styles (#) */
-        #checkdiv {
-            @apply grid grid-cols-4 text-center 
-        }
-            
-        #addForm {
-            @apply rounded-md px-2 py-1 text-center font-medium shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50 
-        }
-        /* Class Styles (.) */
-        .error {
-            @apply text-red-500 text-sm
-        }
-    </style>
+    @yield('addedForms')
     {{-- blade-formatter-enable --}}
     @yield('signature')
+    </br>
 
     @yield('etransfer')
-
+    </br>
     @yield('comments')
-
+    @yield('submit')
     @yield('footer')
 </body>
 </html>
