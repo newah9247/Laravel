@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('index');
+})->name('entry');
 
 Route::post('/', function () {
-    return view('index_submission');
+    return view('indexSubmission');
 })->name('submission');
 
 

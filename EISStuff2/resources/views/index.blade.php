@@ -1,4 +1,4 @@
-@extends('layouts.nonlivestock')
+@extends('layouts.indexLayout')
 @extends('layouts.nav')
 
 @section('title')
@@ -12,50 +12,95 @@
         @csrf
         <div id="checkdiv">
             <div>
-                <input type="checkbox" id="fruitveg" name="categories[]" value="Fruit/Vegetables">
+                <input type="radio" id="fruitveg" name="categories[]" value="Fruit/Vegetables">
                 <label for="fruitveg">Fruit & Vegetables</label>
             </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var classSelect = document.getElementById('classSelect');
+                var originalOptions = classSelect.innerHTML;
+
+                document.getElementById('fruitveg').addEventListener('change', function() {
+                    if (this.checked) {
+                        // Remove existing options
+                        while (classSelect.firstChild) {
+                            classSelect.removeChild(classSelect.firstChild);
+                        }
+                        // Add new options
+                        var classOptions = ['37A - Apples - Plate of 5', 
+                                            '37B - Apples - 3LB Bag', 
+                                            '37C - Grapes, Peaches, Raspberries, Blueberries',
+                                            '37D - Plums', 
+                                            '37E - Blackberries', 
+                                            '38A - Pears',
+                                            '38B - Arrangement of Fruit - Senior',
+                                            '39A - Apples - Plate of 5 - Junior',
+                                            '39B - Apples - 3LB Bag - Junior',
+                                            '39C - Arrangement of Fruit - Junior',
+                                            '39D - Blueberries - Junior',
+                                            '39E - Vegetables - Junior',
+                                            '39F - Vegetable Display - Junior',
+                                            '39G - Scarecrow - Junior',
+                                            '40A - Roots & Potatoes',
+                                            '40B - Vegetables',
+                                            '40C - Vegetable Display - Senior',
+                                            '40D - Heaviest Pumpkin or Squash',
+                                            '40E - Herbs',
+                                            '41A - Grains - Sheaf & Seed',
+                                            '41B - Grassland',
+                                            '42 - Artistic Display'];
+                        classOptions.forEach(function(option) {
+                            var opt = document.createElement('option');
+                            opt.value = option;
+                            opt.text = option;
+                            classSelect.appendChild(opt);
+                        });
+                    }
+                });
+            });
+            </script>
+
+
             <div>
-                <input type="checkbox" id="creativecraft" name="categories[]" value="Creative Crafts">
+                <input type="radio" id="creativecraft" name="categories[]" value="Creative Crafts">
                 <label for="creativecraft">Creative Crafts</label>
             </div>
             <div>
-                <input type="checkbox" id="rughook" name="categories[]" value="Rug Hooking">
+                <input type="radio" id="rughook" name="categories[]" value="Rug Hooking">
                 <label for="rughook">Rug Hooking</label>
             </div>
             <div>
-                <input type="checkbox" id="art" name="categories[]" value="Art">
+                <input type="radio" id="art" name="categories[]" value="Art">
                 <label for="art">Art</label>
             </div>
             <div>
-                <input type="checkbox" id="photography" name="categories[]" value="Photography">
+                <input type="radio" id="photography" name="categories[]" value="Photography">
                 <label for="photography">Photography</label>
             </div>
             <div>
-                <input type="checkbox" id="flowers" name="categories[]" value="Flowers">
+                <input type="radio" id="flowers" name="categories[]" value="Flowers">
                 <label for="flowers">Flowers</label>
             </div>
             <div>
-                <input type="checkbox" id="cooking" name="categories[]" value="Cooking">
+                <input type="radio" id="cooking" name="categories[]" value="Cooking">
                 <label for="cooking">Cooking</label>
             </div>
+
             <div>
-                <input type="checkbox" id="woodworking" name="categories[]" value="Woodworking">
+                <input type="radio" id="woodworking" name="categories[]" value="Woodworking">
                 <label for="woodworking">Woodworking</label>
             </div>
-
-            @error('categories[]')
-                <p class="error">{{ $message }}</p>
-            @enderror
         </div>
-        <div class="mx-auto max-w-lg pt-7">
-            <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div id="addFormBox" >
+            <div class="bg-white p-3 rounded-lg shadow-lg">
                 <div id="currentSelection">
         
-                    <div id="classSelect" class="text-left">
+                    <div id="classSelectDiv" class="text-left">
                         <label for="classSelect" class="block text-sm font-medium text-gray-700">Class</label>
                             <select id="classSelect" name="classSelect" class="flex justify-left mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ">
-                                
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
                             </select>
                     </div>
         
@@ -65,7 +110,7 @@
                         </button>
                     </div>
         
-                    <div id="sectionSelect" class="text-right">
+                    <div id="sectionSelectDiv" class="text-right">
                         <label for="sectionSelect" class="block text-sm font-medium text-gray-700">Section</label>
                         <select id="sectionSelect" name="sectionSelect" class="block mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ml-auto">
                             <option value="option1">Option 1</option>
@@ -80,25 +125,56 @@
 @endsection
 
 @section('addedForms')
-    <table id="formTable" class="flex justify-center">
-        <!-- Table headers -->
-        <thead>
-            <tr>
-                <th class="p-5">CLASS</th>
-                <th class="p-5">SECTION</th>
-                <th class="p-5">DESCRIPTION</th>
-                <th class="p-5">DELETE</th>
-            </tr>
-        </thead>
-        <!-- Table body -->
-        <tbody>
-            <!-- Existing form rows will be added here -->
-        </tbody>
-    </table>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            width: 60%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        td {
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .item-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="formTable">
+            <thead>
+                <tr>
+                    <th>CLASS</th>
+                    <th>SECTION</th>
+                    <th>DESCRIPTION</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
 
     <script>
         $(document).ready(function() {
-        $('#addForm').click(function() {
+        $('#addForm').click(function(event) {
+        event.preventDefault();
         // Get the selected values from the dropdowns
         var selectedClass = $('#classSelect').val();
         var selectedSection = $('#sectionSelect').val();
@@ -107,26 +183,25 @@
         var newRow = $('<tr>');
 
         // Add input fields for each column with the selected values
-        newRow.append('<td><input type="text" name="class" value="' + selectedClass + '"></td>');
-        newRow.append('<td><input type="text" name="section" value="' + selectedSection + '"></td>');
-        newRow.append('<td><input type="text" name="description"></td>');
+        newRow.append('<td>' + selectedClass + '</td>');
+        newRow.append('<td>' + selectedSection + '</td>');
+        newRow.append('<td></td>'); // Since there's no value for description initially
         newRow.append('<td><button type="button" class="deleteRow">Delete</button></td>');
 
         // Append the new row to the table
         $('#formTable tbody').append(newRow);
     });
 
-    // Delete row functionality
-    $(document).on('click', '.deleteRow', function() {
-        $(this).closest('tr').remove();
+        // Delete row functionality
+        $(document).on('click', '.deleteRow', function() {
+            $(this).closest('tr').remove();
+        });
     });
-});
-
     </script>
 @endsection
 
 @section('signature')
-<h2 class="">Please Sign Here <span class="red">*</span></h2>
+<h2 class="">Please Sign Here<span class="red">*</span></h2>
     <div class="flex justify-center">
         <div class="wrapper">
             <button id="clear" class="text-center">Clear</button>
