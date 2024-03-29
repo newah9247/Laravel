@@ -11,3 +11,6 @@ Route::post('/', function () {
 })->name('submission');
 
 
+Route::get('/beef', function () {
+    return view('beef');
+})->name('beef');

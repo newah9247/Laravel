@@ -1,16 +1,13 @@
-footer {
-    background-color: #2a2a2a; /* bg-slate-900 */
-    color: white; /* text-white */
-    text-align: center; /* text-center */
-    padding: 0.75rem; /* p-3 */
-    position: absolute; /* absolute */
-    bottom: 0; /* bottom-0 */
-    width: 100%; /* w-full */
-    }
-    
+html, body {
+    height: 100%; /* h-full */
+    background-color: #EBEBEB; /* bg-gray-300 */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
 /* Header Styles */
 h1 {
-    font-size: 2.25rem; /* text-4xl */
+    font-size: 3rem; /* text-4xl */
     font-weight: 700; /* font-bold */
     color: #2a2a2a; /* text-slate-900 */
     display: flex;
@@ -18,9 +15,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem; /* text-xl */
+    font-size: 2rem; /* text-xl */
     font-weight: 500; /* font-medium */
-    color: #4b5563; /* text-slate-700 */
+    color: black; /* text-slate-700 */
     display: flex;
     justify-content: center; /* flex justify-center */
 }
@@ -31,23 +28,73 @@ h3 {
     display: flex;
     justify-content: center; /* flex justify-center */
 }
-
 /* Tag Styles */
 label {
     color: #000000; /* text-black */
     font-weight: 500; /* font-medium */
 }
 
-html, body {
-    height: 100%; /* h-full */
-    background-color: #EBEBEB; /* bg-gray-300 */
+.button-submit {
+    border-radius: 0.5rem; /* rounded-md */
+    padding: 0.35rem 0.35rem; /* px-2 py-1 */
+    text-align: center; /* text-center */
+    font-weight: 500; /* font-medium */
+    box-shadow: 0 1px 2px rgba(36, 87, 121, 0.05), 0 1px 1px rgba(0, 0, 0, 0.08); /* shadow-sm */
+    border: 1px solid rgba(39, 48, 54, 0.1); /* ring-1 */
+    background-color: #3D8AF7; /* hover:bg-slate-50 */
+}
+
+.button-submit:hover {
+    background-color: lightblue;
+}
+
+input[type='radio'] { 
+    transform: scale(1.75);
+}
+
+
+
+/*Table Styles*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 25px;
+}
+td {
+    text-align: center;
+    font-size: 25px;
+}
+th {
+    background-color: #f2f2f2;
+    font-size: 25px;
+}
+/*Footer Styles*/
+footer {
+    background-color: #2a2a2a; /* bg-slate-900 */
+    color: white; /* text-white */
+    text-align: center; /* text-center */
+    padding: 0.75rem; /* p-3 */
+    width: 100%; /* w-full */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
 }
 
 /* Div Styles (#) */
-#checkdiv {
+#radioDiv {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr)); /* grid grid-cols-4 */
     text-align: center; /* text-center */
+    font-size: 1.5rem;
 }
 
 #addForm {
@@ -67,10 +114,77 @@ html, body {
     margin-right: auto;
     max-width: 55rem;
     padding-top: 1.75rem;
+    display: flex;
+    justify-content: center;
 }
 
 #addForm:hover {
     background-color: #f7fafc; /* hover:bg-slate-50 */
+}
+
+#dropdownBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+}
+
+#radioBox {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70rem;
+    background-color: white;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+}
+
+#selectionDetails {
+    margin-top: 20px;
+}
+
+#classDropdownLabel, #sectionDropdownLabel {
+    padding-top: .5rem;
+    display: block;
+    font-size: 25px;
+    color: black;
+    font-weight: 500;
+    text-align: center;
+}
+
+#sectionSelect, #classSelect {
+    font-size: 25px;
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-style: none;
+    border-color: #d1d5db;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
+    margin-left: auto;
+    text-align: center;
+}
+
+#submitDiv {
+    padding-bottom: 4rem;
+}
+
+#etransferP {
+    font-size: 20px;
+}
+
+#clear {
+    font-size: 20px;
 }
 
 /* Class Styles (.) */
@@ -81,4 +195,19 @@ html, body {
 
 .red {
     color: red;
+}
+
+.container {
+    margin: 50px auto;
+    width: 60%;
+}
+
+.item-list {
+    margin-top: 20px;
+}
+
+.woodworkingLabel, .cookingLabel, .flowersLabel, 
+.photographyLabel, .artLabel, .rughookLabel, 
+.creativecraftLabel, .fruitvegLabel {
+    padding-left: 10px;
 }

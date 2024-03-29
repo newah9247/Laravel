@@ -1,3 +1,8 @@
+@section('head')
+    <script src="{{ asset('/js/addToDropdown.js') }}"></script>
+    <script src="{{ asset('/js/signature.js') }}"></script>
+@endsection
+
 @extends('layouts.indexLayout')
 @extends('layouts.nav')
 
@@ -10,113 +15,63 @@
 @section('content')
     <form id="entryForm" action="{{ route('submission') }}">
         @csrf
-        <div id="checkdiv">
-            <div>
-                <input type="radio" id="fruitveg" name="categories[]" value="Fruit/Vegetables">
-                <label for="fruitveg">Fruit & Vegetables</label>
-            </div>
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var classSelect = document.getElementById('classSelect');
-                var originalOptions = classSelect.innerHTML;
-
-                document.getElementById('fruitveg').addEventListener('change', function() {
-                    if (this.checked) {
-                        // Remove existing options
-                        while (classSelect.firstChild) {
-                            classSelect.removeChild(classSelect.firstChild);
-                        }
-                        // Add new options
-                        var classOptions = ['37A - Apples - Plate of 5', 
-                                            '37B - Apples - 3LB Bag', 
-                                            '37C - Grapes, Peaches, Raspberries, Blueberries',
-                                            '37D - Plums', 
-                                            '37E - Blackberries', 
-                                            '38A - Pears',
-                                            '38B - Arrangement of Fruit - Senior',
-                                            '39A - Apples - Plate of 5 - Junior',
-                                            '39B - Apples - 3LB Bag - Junior',
-                                            '39C - Arrangement of Fruit - Junior',
-                                            '39D - Blueberries - Junior',
-                                            '39E - Vegetables - Junior',
-                                            '39F - Vegetable Display - Junior',
-                                            '39G - Scarecrow - Junior',
-                                            '40A - Roots & Potatoes',
-                                            '40B - Vegetables',
-                                            '40C - Vegetable Display - Senior',
-                                            '40D - Heaviest Pumpkin or Squash',
-                                            '40E - Herbs',
-                                            '41A - Grains - Sheaf & Seed',
-                                            '41B - Grassland',
-                                            '42 - Artistic Display'];
-                        classOptions.forEach(function(option) {
-                            var opt = document.createElement('option');
-                            opt.value = option;
-                            opt.text = option;
-                            classSelect.appendChild(opt);
-                        });
-                    }
-                });
-            });
-            </script>
-
-
-            <div>
-                <input type="radio" id="creativecraft" name="categories[]" value="Creative Crafts">
-                <label for="creativecraft">Creative Crafts</label>
-            </div>
-            <div>
-                <input type="radio" id="rughook" name="categories[]" value="Rug Hooking">
-                <label for="rughook">Rug Hooking</label>
-            </div>
-            <div>
-                <input type="radio" id="art" name="categories[]" value="Art">
-                <label for="art">Art</label>
-            </div>
-            <div>
-                <input type="radio" id="photography" name="categories[]" value="Photography">
-                <label for="photography">Photography</label>
-            </div>
-            <div>
-                <input type="radio" id="flowers" name="categories[]" value="Flowers">
-                <label for="flowers">Flowers</label>
-            </div>
-            <div>
-                <input type="radio" id="cooking" name="categories[]" value="Cooking">
-                <label for="cooking">Cooking</label>
-            </div>
-
-            <div>
-                <input type="radio" id="woodworking" name="categories[]" value="Woodworking">
-                <label for="woodworking">Woodworking</label>
+        <div id="radioBox">
+            <div id="radioDiv">
+                <div>
+                    <input type="radio" id="fruitveg" name="categories[]" value="Fruit/Vegetables">
+                    <label for="fruitveg" class="fruitvegLabel">Fruit & Vegetables</label>
+                </div>
+                <div>
+                    <input type="radio" id="creativecraft" name="categories[]" value="Creative Crafts">
+                    <label for="creativecraft" class="creativecraftLabel">Creative Crafts</label>
+                </div>
+                <div>
+                    <input type="radio" id="rughook" name="categories[]" value="Rug Hooking">
+                    <label for="rughook" class="rughookLabel">Rug Hooking</label>
+                </div>
+                <div>
+                    <input type="radio" id="art" name="categories[]" value="Art">
+                    <label for="art" class="artLabel">Art</label>
+                </div>
+                <div>
+                    <input type="radio" id="photography" name="categories[]" value="Photography">
+                    <label for="photography" class="photographyLabel">Photography</label>
+                </div>
+                <div>
+                    <input type="radio" id="flowers" name="categories[]" value="Flowers">
+                    <label for="flowers" class="flowersLabel">Flowers</label>
+                </div>
+                <div>
+                    <input type="radio" id="cooking" name="categories[]" value="Cooking">
+                    <label for="cooking" class="cookingLabel">Cooking</label>
+                </div>
+                <div>
+                    <input type="radio" id="woodworking" name="categories[]" value="Woodworking">
+                    <label for="woodworking" class="woodworkingLabel">Woodworking</label>
+                </div>
             </div>
         </div>
         <div id="addFormBox" >
-            <div class="bg-white p-3 rounded-lg shadow-lg">
+            <div id="dropdownBox">
                 <div id="currentSelection">
-        
-                    <div id="classSelectDiv" class="text-left">
-                        <label for="classSelect" class="block text-sm font-medium text-gray-700">Class</label>
-                            <select id="classSelect" name="classSelect" class="flex justify-left mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ">
-                                <option value="option1">Option 1</option>
-                                <option value="option2">Option 2</option>
-                                <option value="option3">Option 3</option>
+                    <div id="classSelectDiv">
+                        <label id="classDropdownLabel" for="classSelect">CLASS<span class="red">*</span></label>
+                            <select id="classSelect" name="classSelect">
+                                <option value="" disabled selected>Select an option above</option>
                             </select>
                     </div>
         
-                    <div id="selectionDetails" class="flex justify-center">
-                        <button type="submit" id="addForm" class="rounded-md px-2 py-1 text-center font-medium shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50">
-                            Add Form
-                        </button>
-                    </div>
-        
-                    <div id="sectionSelectDiv" class="text-right">
-                        <label for="sectionSelect" class="block text-sm font-medium text-gray-700">Section</label>
-                        <select id="sectionSelect" name="sectionSelect" class="block mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ml-auto">
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                    <div id="sectionSelectDiv">
+                        <label id="sectionDropdownLabel" for="sectionSelect">SECTION<span class="red">*</span></label>
+                        <select id="sectionSelect" name="sectionSelect">
+                            <option value="" disabled selected>Please select a class first</option>
                         </select>
+                    </div>
+
+                    <div id="selectionDetails" class="flex justify-center">
+                        <button class="button-submit" type="submit" id="addForm">
+                            Add Class
+                        </button>
                     </div>
                 </div>
             </div>
@@ -125,34 +80,6 @@
 @endsection
 
 @section('addedForms')
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            margin: 50px auto;
-            width: 60%;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        td {
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .item-list {
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -170,41 +97,13 @@
             </tbody>
         </table>
     </div>
-
-    <script>
-        $(document).ready(function() {
-        $('#addForm').click(function(event) {
-        event.preventDefault();
-        // Get the selected values from the dropdowns
-        var selectedClass = $('#classSelect').val();
-        var selectedSection = $('#sectionSelect').val();
-
-        // Create a new row for the table
-        var newRow = $('<tr>');
-
-        // Add input fields for each column with the selected values
-        newRow.append('<td>' + selectedClass + '</td>');
-        newRow.append('<td>' + selectedSection + '</td>');
-        newRow.append('<td></td>'); // Since there's no value for description initially
-        newRow.append('<td><button type="button" class="deleteRow">Delete</button></td>');
-
-        // Append the new row to the table
-        $('#formTable tbody').append(newRow);
-    });
-
-        // Delete row functionality
-        $(document).on('click', '.deleteRow', function() {
-            $(this).closest('tr').remove();
-        });
-    });
-    </script>
 @endsection
 
 @section('signature')
-<h2 class="">Please Sign Here<span class="red">*</span></h2>
+<h2>Please Sign Here<span class="red">*</span></h2>
     <div class="flex justify-center">
         <div class="wrapper">
-            <button id="clear" class="text-center">Clear</button>
+            <button id="clear" class="text-center"><b>CLEAR SIGNATURE</b></button>
             <canvas id="signature-pad" width="600" height="200" ></canvas>
         </div>
     </div>
@@ -228,25 +127,24 @@
         document.getElementById("clear").addEventListener('click', function(){
             signaturePad.clear();
         });
-
     </script>
 @endsection
 
     @section('etransfer')
-    <p style="text-align:center">E-transfers <b>ONLY</b> accepted at: <b>manager@annapolisvalleyexhibition.com</b>
-        </br>
-    Please include Exhibitor name in notes for identification.
-        </br>
-    If you are asked for a security question, please check for errors.
-        </br>
-    This email auto deposits.
-        </br>
-        </br>
-    Cheques payable to: <i><b>(NO POST-DATED CHEQUES)</i></b>
-        </br>
-    <b>Annapolis Valley Exhibition, 570 Main St, Box 100,</b> 
-        </br>
-    <b>Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339</b></p>
+        <p id="etransferP">E-transfers <b>ONLY</b> accepted at: <b>manager@annapolisvalleyexhibition.com</b>
+            </br>
+        Please include Exhibitor name in notes for identification.
+            </br>
+        If you are asked for a security question, please check for errors.
+            </br>
+        This email auto deposits.
+            </br>
+            </br>
+        Cheques payable to: <i><b>(NO POST-DATED CHEQUES)</i></b>
+            </br>
+        <b>Annapolis Valley Exhibition, 570 Main St, Box 100,</b> 
+            </br>
+        <b>Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339</b></p>
     @endsection
 
     @section('comments')
@@ -258,9 +156,9 @@
     @endsection
 
     @section('submit')
-    <div class="flex justify-center">
+    <div id="submitDiv" class="flex justify-center">
         <form method="POST">
-            <button type="submit" id="submitForm" class="rounded-md px-2 py-1 text-center font-medium shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50">
+            <button class="button-submit" type="submit" id="submitForm">
                 Submit
             </button>
         </form>
@@ -268,8 +166,3 @@
     @endsection
 
     @extends('layouts.footer')
-    
-
-
-
-
