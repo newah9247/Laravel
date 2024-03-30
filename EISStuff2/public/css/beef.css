@@ -1,9 +1,10 @@
-.star{
-    color: red;
-    font-size: 20px;
-    font-style: bold;
-    font-weight: bolder;
+html, body {
+    height: 100%; /* h-full */
+    background-color: #EBEBEB; /* bg-gray-300 */
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
+
 /* Header Styles */
 h1 {
     font-size: 3rem; /* text-4xl */
@@ -28,12 +29,7 @@ h3 {
     justify-content: center; /* flex justify-center */
 }
 
-body {
-    font-family: "Helvetica";
-    font-weight: 400;
-	font-size: 20px;
-}
-
+/* Classes */
 .wholeForm {
 	padding: 8px 8px 8px 8px;
 	background: #EBEBEB;	
@@ -295,23 +291,7 @@ body {
 	border-style: solid;
 	border-radius: 3px 3px 3px 3px;
 }
-/* .button-2 {
-	width: 131px;
-	height: 34px;
-	padding: 0px 10px 0px 10px;
-} */
-/* .select-4 {
-	width: 148px;
-	height: 32px;
-	padding: 4px 8px 4px 8px;
-	background: #EBEBEB;
-	color: #232323;
-	border-color: #232323;
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 4px 4px 4px 4px;
-	font-family: "Helvetica";
-	font-weight: 400;
-	font-size: 14px;
-	text-align: left;
-} */
+
+.red {
+    color: red;
+}

@@ -1,11 +1,44 @@
-@extends('layouts.beefLayout')
+{{--  *INSTALL BETTER COMMENTS EXTENSION ON VSCODE TO DISPLAY COMMENTS BETTER*
+  Beef Entry Form
+  By: Michele Roosje & Noah Taylor
+  Date: 3/29/24
+  Filename: beef.blade.php
+  ?Purpose: This is the beef entry form page for the Annapolis Valley Exhibition. This page is used to enter beef (cattle) into the competition.
 
+  *Changes by Noah*
+  - Added the extends for the beefLayout and nav
+    ? I added the extends for the beefLayout and nav so that the page would have the same layout as the other pages
+  - Added the section for the head
+    ? Included JS Script in head (beef.js) 
+  - Added the section for the title
+  - Added the section for the farm
+  - Added the section for the animal
+    ? Added extra sections to better organize the page, as well as get rid of some of the <div><br><br></div> tags as @yield sections are auto spaced
+  
+
+  *More Important Things*
+  ! - Moved JavaScript to beef.js
+  ! - Edited the content section
+  ! - Changed "star" to "red" for my CSS and my own sanity (ctrl + f -> red and then click the arrow, drop down type "star" click replace all if you want to change it back)
+  ! - Edits have been made in the original CSS file as well
+  ! - Changed some things due to my file structure/names of folders/files 
+
+  *TODO List*
+  TODO: 
+    - PHP Connection to JavaScript
+      ? I was unsure how to do that completely, but I made a few edits to the JavaScript file so it may or may not work
+  TODO:
+--}}
+
+@extends('layouts.beefLayout')
 @extends('layouts.nav')
 
 @section('head')
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/beef.js"></script>
+
         <title>Beef Entry Form</title>
     </head>
 @endsection
@@ -14,6 +47,93 @@
     <h1>Beef Entry Form</h1>
     <h2>Entries Due by July 22nd</h2>
     <h3>All Fields marked with a <span class="red">*</span>are Required.</h3>
+@endsection
+
+@section ('farm')
+<div class="wholeForm">
+  <table class="formTable text-center">
+  </table>    
+  <form action="" method="post">
+      <table class="formTable text-center entryInfo">
+          <thead>
+              <tr>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr> 
+                  <td>
+                      <div class="row mb-3">
+                          <label for="insurance" class="col-sm-2 col-form-label textFieldLbl">Insurance</label>
+                      <div class="col-sm-4">
+                          <input type="text" class="form-control textFieldInp" id="insurance" placeholder="insurance #">
+                      </div>
+                  </div>
+              </td>
+              
+              <td>
+                <div class="row mb-3">
+                  <label for="farmNameInp" class="col-sm-2 col-form-label textFieldLbl">Farm Name</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control textFieldInp" id="farmNameInp" placeholder="Farm Name">
+                  </div>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <div><br></div>   
+                <div class="row mb-3">
+                  <label for="premiseIdInp" class="col-sm-2 col-form-label textFieldLbl">Premise ID<b class="red">*</b></label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control textFieldInp" id="premiseIdInp" placeholder="Premise Id Number">
+                </div>
+              </td>
+              <td>
+                <div class="row mb-3">
+                  <label for="numCattleInp" class="col-sm-2 col-form-label numFieldLbl">Number of Cattle <b class="red">*</b></label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control numFieldInp" id="numCattleInp" placeholder="#">
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </form>
+@endsection
+
+@section('animal')
+  <div class="grid-container">
+    <div class="container text-center">
+      <h3 class="heading3"><b>REGISTRATION NOT COMPLETE WITHOUT PROOF OF INSURANCE</b></h3>
+    </div>
+
+    {{--Animal Name--}}
+    <label for="animalName">Name of Animal<span class="red">*</span></label>
+    <input type="text" id="animalName" placeholder="Animal Name">
+
+    {{--Registration Number--}}
+    <label for="registrationNum">Registration Number</label>
+    <input type="text" id="registrationNum" placeholder="Insurance Number Layout Here">
+
+    {{--Ear Tag--}}
+    <label for="earTag">Ear Tag<span class="red">*</span></label>
+    <input type="text" id="earTag" placeholder="#">
+
+    {{--Animal Date of Birth--}}
+    <label for="animalBirth">Animal Date of Birth <span class="red">*</span></label>
+    <input type="date" id="animalbirth">
+
+    {{--Sire Name--}}
+    <label for="sireName">Name of Sire</label>
+    <input type="text" id="sireName" placeholder="Name of Sire">
+
+    {{--Dame Name--}}
+    <label for="dameName">Name of Dame</label>
+    <input type="text" id="dameName" placeholder="Name of Dame">
+  </div>
 @endsection
 
 @section('content')
@@ -27,68 +147,7 @@
         $discount = 20;
         $passes = 15;
     ?>
-<div class="wholeForm">
-    <table class="formTable text-center">
-    </table>    
-    <form action="" method="post">
-        <table class="formTable text-center entryInfo">
-            <thead>
-                <tr>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr> 
-                    <td>
-                        <div class="row mb-3">
-                            <label for="insurance" class="col-sm-2 col-form-label textFieldLbl">Insurance</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control textFieldInp" id="insurance" placeholder="insurance #">
-                        </div>
-                    </div>
-                </td>
-                
-                <td>
-                  <div class="row mb-3">
-                    <label for="farmNameInp" class="col-sm-2 col-form-label textFieldLbl">Farm Name</label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control textFieldInp" id="farmNameInp" placeholder="Farm Name">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-    
-              <tr>
-                <td>
-                  <div><br></div>   
-                  <div class="row mb-3">
-                    <label for="premiseIdInp" class="col-sm-2 col-form-label textFieldLbl">Premise ID<bold class="star">*</bold></label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control textFieldInp" id="premiseIdInp" placeholder="Premise Id Number">
-                  </div>
-                </td>
-                <td>
-                  <div class="row mb-3">
-                    <label for="numCattleInp" class="col-sm-2 col-form-label numFieldLbl">Number of Cattle <bold class="star">*</bold></label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control numFieldInp" id="numCattleInp" placeholder="#">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
-    </form>
-    
-    <div><br></div>
-
-    <div class="container text-center">
-      <h3 class="heading3"><bold>REGISTRATION NOT COMPLETE WITHOUT PROOF OF INSURANCE</bold></h3>
-    </div>
-
-    <div><br></div>
-    
     <table class="priceRow">
       <tr>
         <th></th>
@@ -98,28 +157,28 @@
 
       <tr>  
         <td class="col1">
-          <label for="headFee" class="col-sm-5 col-form-label priceLbl">Number of Cattle<bold class="star">*</bold></label></td>
+          <label for="headFee" class="col-sm-5 col-form-label priceLbl">Number of Cattle<b class="red">*</b></label></td>
 
         <td class="col2">
           <input type="number" class="form-control Qty" id="headQty" min="2" value="" oninput="calculateHeadFee()">
         </td>
 
         <td rowspan="20" class="col4">
-          <h5 class="text-center"><bold>Includes One Free Exhibitor Pass with Registration</bold></h5>
+          <h5 class="text-center"><b>Includes One Free Exhibitor Pass with Registration</b></h5>
           <br>
 
-          <h5 class="text-center"><bold> 1 to 3 Aminals -  may purchase 1 attendants pass
+          <h5 class="text-center"><b> 1 to 3 Animals -  may purchase 1 attendants pass
           <br><br>
-            4 Animals & Over - may purchase up to 3 attendants passes</bold></h5>
+            4 Animals & Over - may purchase up to 3 attendants passes</b></h5>
           <br><br>
         
-          <h5><bold> E-transfers ONLY accepted at: manager@annapolisvalleyexhibition.com <br>
-              Please include Entry Name in Notes for identification.<bold></h5>
+          <h5><b> E-transfers ONLY accepted at: manager@annapolisvalleyexhibition.com <br>
+              Please include Entry Name in Notes for identification.<b></h5>
           <br><br>
     
-          <h5><bold>Cheques payable to: (no post-dated cheques) <br>
+          <h5><b>Cheques payable to: (no post-dated cheques) <br>
               Annapolis Valley Exhibition, 570 Main St, Box 100,<br> 
-              Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339<bold></h5>
+              Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339<b></h5>
           <br><br>
     
           <h8>Exhibitor Declaration: <br>
@@ -128,7 +187,7 @@
                   
             <input class="form-check-input " type="checkbox" value="" id="readAndAgreeChk">
             
-            <label class="form-check-label " for="campingChk" id="readAndAgreeLbl"><bold class="star">*</bold> I have read and agree to the exhibitor declaration.</label>
+            <label class="form-check-label " for="campingChk" id="readAndAgreeLbl"><b class="red">*</b> I have read and agree to the exhibitor declaration.</label>
 
             <br><br>
 
@@ -207,7 +266,7 @@
           <td class="col1">
             <input class="form-check-input entriesRadio" id="discountOpt" type="radio" name="discount" value="true">
 
-            <label class="form-check-label priceLbl" id="discountLbl" for="discount">Discount (Until August 5th) <bold>-</bold>$<?= $discount ?></label>
+            <label class="form-check-label priceLbl" id="discountLbl" for="discount">Discount (Until August 5th) <b>-</b>$<?= $discount ?></label>
           </td>
                       
           <td class="col2">
@@ -263,3 +322,5 @@
       </table>
 </body>
 @endsection
+
+@extends('layouts.footer')
