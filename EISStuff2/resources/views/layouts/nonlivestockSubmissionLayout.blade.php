@@ -7,6 +7,6 @@
     <title>Confirmation</title>
 </head>
 <body>
-    
+    @yield('submission')
 </body>
 </html>

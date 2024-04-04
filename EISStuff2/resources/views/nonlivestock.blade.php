@@ -3,7 +3,7 @@
     <script src="{{ asset('/js/signature.js') }}"></script>
 @endsection
 
-@extends('layouts.indexLayout')
+@extends('layouts.nonlivestockLayout')
 @extends('layouts.nav')
 
 @section('title')
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <form id="entryForm" action="{{ route('submission') }}">
+    <form id="entryForm" action="{{ route('nonlivestockSubmission') }}">
         @csrf
         <div id="radioBox">
             <div id="radioDiv">
@@ -88,7 +88,6 @@
                 <tr>
                     <th>CLASS</th>
                     <th>SECTION</th>
-                    <th>DESCRIPTION</th>
                     <th>DELETE</th>
                 </tr>
             </thead>
@@ -109,7 +108,7 @@
     </div>
 @endsection
 
-    @section('etransfer')
+@section('etransfer')
         <p id="etransferP">E-transfers <b>ONLY</b> accepted at: <b>manager@annapolisvalleyexhibition.com</b>
             </br>
         Please include Exhibitor name in notes for identification.
@@ -122,26 +121,66 @@
         Cheques payable to: <i><b>(NO POST-DATED CHEQUES)</i></b>
             </br>
         <b>Annapolis Valley Exhibition, 570 Main St, Box 100,</b> 
-            </br>
-        <b>Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339</b></p>
-    @endsection
+    </br>
+    <b>Lawrencetown, NS  B0S 1M0, Phone: (902)584-3339</b></p>
+@endsection
 
-    @section('comments')
-    <form class="flex justify-center">
-        <textarea id="comments" name="w3review" rows="10" cols="80">
-            Leave us a note or comment!
-        </textarea>
+@section('comments')
+<form class="flex justify-center flex-col items-center">
+    <label for="comments">Leave Us a Comment!</label>
+    <textarea id="comments" rows="10" cols="80"></textarea>
+</form>
+@endsection
+
+@section('submit')
+<div id="submitDiv" class="flex justify-center">
+    <form method="POST">
+        <button class="button-submit" type="submit" id="submitForm">
+            Submit
+        </button>
     </form>
-    @endsection
+</div>
+@endsection
 
-    @section('submit')
-    <div id="submitDiv" class="flex justify-center">
-        <form method="POST">
-            <button class="button-submit" type="submit" id="submitForm">
-                Submit
-            </button>
-        </form>
-    </div>
-    @endsection
+@section('footer')
+    <footer>
+    <p id="phone">Call: (902) 584-3339</p>
+    <p id="email">Email: <a href="mailto:info@annapolisvalleyexhibiton.com">info@annapolisvalleyexhibition.com</a></p>
+    <address>Annapolis Valley Exhibition, 570 Main St, Box 100, Lawrencetown, NS, B0S 1M0</address>
+    </footer>
 
-    @extends('layouts.footer')
+    <style>
+    footer {
+        padding: 8px 8px 8px 8px;
+        background: #7A7A7A;
+        border-color: #000000;
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    #phone {
+        text-align: center;
+        color: black;
+        font-family: "Helvetica";
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    address {
+        text-align: center;
+        color: black;
+        font-family: "Helvetica";
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    #email {
+        text-align: center;
+        color: black;
+        font-family: "Helvetica";
+        font-weight: 400;
+        font-size: 20px;
+    }
+    </style>
+
+@endsection

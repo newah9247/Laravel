@@ -11,7 +11,6 @@ $(document).ready(function() {
         // Add input fields for each column with the selected values
         newRow.append('<td>' + selectedClass + '</td>');
         newRow.append('<td><a href="#" class="sectionLink">' + selectedSection + '</a></td>');
-        newRow.append('<td></td>'); // Since there's no value for description initially
         newRow.append('<td><button type="button" class="deleteRow">Delete</button></td>');
 
         // Append the new row to the table

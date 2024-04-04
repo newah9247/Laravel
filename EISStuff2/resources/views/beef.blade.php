@@ -52,7 +52,6 @@
 <div class="wholeForm">
     <table class="formTable text-center">
     </table>    
-    <form action="" method="post">
         <table class="formTable text-center entryInfo">
             <thead>
                 <tr>
@@ -99,7 +98,6 @@
             </tr>
           </tbody>
         </table>
-  </form>
 @endsection
 
 @section('animal')
@@ -109,30 +107,41 @@
     </div>
 
     <h1>Animal 1</h1>
+    <div id="animalEntry">
+      {{--Animal Name--}}
+      <label for="animalName">Name of Animal<span class="red">*</span></label>
+      <input type="text" class="form-control price" id="animalName" placeholder="Animal Name">
+      <br>
+    
+      {{--Registration Number--}}
+      <label for="registrationNum">Registration Number</label>
+      <input type="text" class="form-control price" id="registrationNum" placeholder="Insurance Number Layout Here">
+      <br>
+    </div>
 
-    {{--Animal Name--}}
-    <label for="animalName">Name of Animal<span class="red">*</span></label>
-    <input type="text" id="animalName" placeholder="Animal Name">
+    <div id="animalEntry">
+      {{--Ear Tag--}}
+      <label for="earTag">Ear Tag<span class="red">*</span></label>
+      <input type="text" class="form-control price"id="earTag" placeholder="#">
+      <br>
 
-    {{--Registration Number--}}
-    <label for="registrationNum">Registration Number</label>
-    <input type="text" id="registrationNum" placeholder="Insurance Number Layout Here">
+      {{--Animal Date of Birth--}}
+      <label for="animalBirth">Animal Date of Birth <span class="red">*</span></label>
+      <input type="date" class="form-control price" id="animalbirth">
+      <br>
+    </div>
 
-    {{--Ear Tag--}}
-    <label for="earTag">Ear Tag<span class="red">*</span></label>
-    <input type="text" id="earTag" placeholder="#">
+    <div id="animalEntry">
+      {{--Sire Name--}}
+      <label for="sireName">Name of Sire</label>
+      <input type="text" class="form-control price" id="sireName" placeholder="Name of Sire">
+      <br>
 
-    {{--Animal Date of Birth--}}
-    <label for="animalBirth">Animal Date of Birth <span class="red">*</span></label>
-    <input type="date" id="animalbirth">
-
-    {{--Sire Name--}}
-    <label for="sireName">Name of Sire</label>
-    <input type="text" id="sireName" placeholder="Name of Sire">
-
-    {{--Dame Name--}}
-    <label for="dameName">Name of Dame</label>
-    <input type="text" id="dameName" placeholder="Name of Dame">
+      {{--Dame Name--}}
+      <label for="dameName">Name of Dame</label>
+      <input type="text" class="form-control price" id="dameName" placeholder="Name of Dame">
+      <br>
+    </div>
   </div>
 
   <div id="animalCheckbox">
@@ -146,16 +155,16 @@
         <br><br>
 
         <input type="checkbox" id="femaleIYearling">
-        <label for="femaleIYearling">Female Intermediate Yearling</label>
-        <p class="checkDesc">Born April 1/22 - December 31/22</p>
+        <label for="femaleIYearling">Female Intermediate Yearling (Born April 1/22 - December 31/22)</label>
+        <br><br>
 
         <input type="checkbox" id="twoYear">
-        <label for="twoYear">2 Year Cow / Calf</label>
-        <p class="checkDesc">Born January 1/21 - December 31/21, with her 2022 purebred, tattooed calf at foot</p>
+        <label for="twoYear">2 Year Cow / Calf (Born January 1/21 - December 31/21, with her 2022 purebred, tattooed calf at foot)</label>
+        <br><br>
 
         <input type="checkbox" id="breedersHerd">
-        <label for="breedersHerd">Breeders Herd Group of 4</label>
-        <p class="checkDesc">(Male & Female) Bred by Exhibitor</p>
+        <label for="breedersHerd">Breeders Herd Group of 4 ((Male & Female) Bred by Exhibitor)</label>
+        <br><br>
 
         <input type="checkbox" id="showmanship">
         <label for="showmanship">Open Beef Showmanship</label>
@@ -171,16 +180,15 @@
         <br><br>
 
         <input type="checkbox" id="femaleSYearling">
-        <label for="femaleSYearling">Female Senior Yearling</label>
-        <p class="checkDesc">Born January 1/22 - March 31/22</p>
-        
+        <label for="femaleSYearling">Female Senior Yearling (Born January 1/22 - March 31/22)</label>
+        <br><br>
+
         <input type="checkbox" id="female">
-        <label for="female">Female</label>
-        <p class="checkDesc">Born prior to January 1/21 with 2023 purebred, tattooed calf at foot</p>
+        <label for="female">Female (Born prior to January 1/21 with 2023 purebred, tattooed calf at foot)</label>
+        <br><br>
 
         <input type="checkbox" id="sireGroup">
-        <label for="sireGroup">Get of Sire Group of 3</label>
-        <p>By same Sire (Male & Female)</p>
+        <label for="sireGroup">Get of Sire Group of 3 (By same Sire (Male & Female))</label>
     </div>
 </div>
 @endsection
@@ -273,6 +281,16 @@
             
           <td class="col2">
             <input type="text" class="form-control price hidden" id="campLengthInp" placeholder="25 feet" >
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col1">
+            <label for="campWidthInp" class="col-sm-5 col-form-label priceLbl hidden" id="campWidthLbl">Camper Width (including slide outs)</label>
+          </td>
+  
+          <td class="col2">
+            <input type="text" class="form-control price hidden" id="campWidthInp" placeholder="10 feet" >
           </td>
         </tr>
 
@@ -372,4 +390,45 @@
 </body>
 @endsection
 
-@extends('layouts.footer')
+@section('footer')
+<footer>
+  <p id="phone">Call: (902) 584-3339</p>
+  <p id="email">Email: <a href="mailto:info@annapolisvalleyexhibiton.com">info@annapolisvalleyexhibition.com</a></p>
+  <address>Annapolis Valley Exhibition, 570 Main St, Box 100, Lawrencetown, NS, B0S 1M0</address>
+</footer>
+
+<style>
+  footer {
+      padding: 8px 8px 8px 8px;
+      background: #7A7A7A;
+      border-color: #000000;
+      border-width: 1px;
+      border-style: solid;
+  }
+
+  #phone {
+      text-align: center;
+      color: black;
+      font-family: "Helvetica";
+      font-weight: 400;
+      font-size: 20px;
+  }
+
+  address {
+      text-align: center;
+      color: black;
+      font-family: "Helvetica";
+      font-weight: 400;
+      font-size: 20px;
+  }
+
+  #email {
+      text-align: center;
+      color: black;
+      font-family: "Helvetica";
+      font-weight: 400;
+      font-size: 20px;
+  }
+</style>
+
+@endsection

@@ -1,7 +1,7 @@
 <nav>
     <img id="logo" src="{{ asset('/images/logo.png') }}" >
     <ul>
-        <li><a href="">Entry Form</a></li>
+        <li><a href="{{ url('/entryFormSelect') }}">Entry Form</a></li>
         <li><a href="">Parade Form</a></li>
         <li><a href="">Vendor Form</a></li>
         <li><a href="">Sponsor Form</a></li>
@@ -9,6 +9,10 @@
 </nav>
 
 <style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
     #logo {
         width: 100px;
         height: 100px;
