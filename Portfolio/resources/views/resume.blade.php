@@ -13,6 +13,7 @@
     <li class="list-disc">organized and hosted events for children</li>
 </ul>
 <h2 class="mb-4 mt-4 text-2xl text-center">NSCC/CORAH - administrative assistant(april 2023 - august 2023)</h2>
+
 <ul>
     <li class="list-disc">handled confidentail information with discretion</li>
     <li class="list-disc">utilized excel to create comprehensive event master sheets</li>
