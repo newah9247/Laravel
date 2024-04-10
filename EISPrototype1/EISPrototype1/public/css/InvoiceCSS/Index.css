@@ -1,0 +1,29 @@
+#InvoiceIDInput {
+	width: 70px;
+}
+
+#DisplayTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 70px;
+}
+  
+#DisplayTable td, #DisplayTable th {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 8px;
+}
+
+#DisplayTable input,  #DisplayTable label{
+    text-align: center;
+}
+  
+#DisplayTable tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#alginForm {
+    margin-left: 0px;
+}

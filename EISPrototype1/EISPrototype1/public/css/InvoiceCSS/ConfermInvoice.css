@@ -1,0 +1,23 @@
+#Invoice {
+    background-color: white;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    align-self: center;
+    margin-left: 15%;
+}
+
+#Invoice td, #Invoice th {
+    padding: 8px;
+}
+
+.Sec{
+	border-bottom: 1px solid #000000;
+}
+
+.SeberateUserInfo{
+    width: 20%;
+}
+
+#ButtonTable{
+    margin-left: 30%;
+}

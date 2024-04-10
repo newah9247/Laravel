@@ -1,0 +1,129 @@
+
+body {
+    background-color: rgb(235 235 235);
+    margin-left: 30px;
+}
+
+.required {
+    color: red; /* Change the color to red */
+}
+
+.form-input {
+    padding: 5px;
+    width: auto;
+    font-size:15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkbox-label {
+    font-size: 35px; /* Increase font size for checkbox label */
+}
+
+.checkbox-container {
+    font-size: 19px; /* Increase font size for checkbox */
+}
+
+  .row {
+ font-size: 19px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.row > * {
+margin: 5px;
+}
+
+.textarea-input {
+    padding: 5px;
+    width: 1000px;
+    height: 70px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.text-container {
+    display: inline-block;
+    width: 100%;
+}
+
+.text-container p {
+    display: inline-block;
+    width: calc(50% - 10px); /* Set the width of each paragraph */
+    padding: 10px; /* Add padding to each paragraph */
+    border-radius: 5px; /* Add border-radius to each paragraph */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    vertical-align: top; /* Align paragraphs to the top */
+}
+
+.canvas-container {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Align items vertically */
+    width: auto; /* Adjust width of container */
+}
+
+.canvas-container label {
+    margin-right: 20px; /* Add some spacing between label and canvas */
+}
+
+
+
+#signature-pad {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 3px;
+    width: 500px;/* Increase the width of the signature pad */
+    height: 100px;
+    margin-right: 20px; /* Add margin between the signature pad and clear button */
+}
+
+#signature-pad canvas {
+    width: 500px;
+    height: 100px;
+}
+
+#clear-button {
+    padding: 8px 15px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.upload-btn-wrapper {
+position: relative;
+overflow: hidden;
+display: inline-block;
+}
+
+.btn {
+border: 1px solid black;
+color: dark-blue;
+background-color: rgb(61 138 247);
+padding: 8px 20px;
+border-radius: 5px;
+font-size: 16px;
+}
+
+.upload-btn-wrapper input[type=file] {
+position: absolute;
+left: 0;
+top: 0;
+opacity: 0;
+}
+.container {
+display: flex;
+}
+
+.left-half {
+width: 50%;
+float: left;
+}
+
+.right-half {
+width: 50%;
+float: right;
+}
+

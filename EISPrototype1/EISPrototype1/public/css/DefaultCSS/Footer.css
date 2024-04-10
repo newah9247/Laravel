@@ -1,0 +1,31 @@
+footer {
+	padding: 8px 8px 8px 8px;
+	background: #7A7A7A;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#phone {
+    text-align: center;
+	color: white;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 24px;
+}
+
+address {
+    text-align: center;
+	color: white;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 24px;
+}
+
+#email {
+    text-align: center;
+	color: white;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 24px;
+}

@@ -1,0 +1,23 @@
+#EISLogo {
+	width: 119px;
+	height: 119px;
+	background: #00000000;
+}
+
+nav {
+	padding: 8px 8px 8px 8px;
+	background: #B70F0A;
+	
+}
+
+nav a {
+	color: #FFFFFF;
+	text-decoration: none;
+	width: 99px;
+	height: 45px;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 36px;
+	text-align: left;
+	padding-left: 30px;
+}

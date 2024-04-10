@@ -1,0 +1,89 @@
+h1 {
+	width: 294px;
+	height: 45px;
+    padding-left: 50px;
+	color: #FFFFFF;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 60px;
+	text-align: left;
+}
+
+select {
+	width: 161px;
+	height: 32px;
+	padding: 4px 8px 4px 8px;
+	background: #EBEBEB;
+	color: #232323;
+	border-color: #232323;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px 4px 4px 4px;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 14px;
+	text-align: left;
+}
+
+.ChacklistLabel {
+	font-size: 15px;
+	padding-right: 70px;
+	padding-top: 10px;
+	float: right;
+}
+
+.CheckList{
+    width: 15px;
+	float: left;
+	padding: 1px;
+}
+
+
+
+form {
+	padding: 20px;
+}
+
+input {
+	width: 270px;
+	height: 42px;
+	padding: 4px 8px 4px 8px;
+	background: #EBEBEB;
+	color: #232323;
+	border-color: #232323;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 3px 3px 3px 3px;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 14px;
+	text-align: left;
+}
+
+td {
+	padding: 30px;
+	padding-left: 40px;
+}
+
+label, p {
+	height: 34px;
+	color: #232323;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 24px;
+	display: block;
+}
+
+label[for$="*"]::after {
+    content: "*";
+    color: red;
+}
+
+.Title {
+	padding-top: 50px;
+	color: #000000;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 36px;
+	text-align: center;
+}

@@ -1,0 +1,48 @@
+
+
+#login-entry-box {
+    width: 50%;
+	height: 200px;
+	padding: 8px 8px 8px 8px;
+	background: #FFFFFF;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+    margin:auto;
+	text-align: center;
+}
+
+#login-entry-box > * {
+    margin:auto;
+}
+
+
+
+.entryLabel {
+	width: 96px;
+	height: 27px;
+	color: #232323;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 20px;
+}
+
+#office-login {
+    text-align: center;
+}
+
+
+#username , #password  {
+	width: 80%;
+	height: 32px;
+	padding: 4px 8px 4px 8px;
+	background: #FFFFFF;
+	color: #C0C0C0;
+	border-color: #232323;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 3px 3px 3px 3px;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 14px;
+}

@@ -1,0 +1,85 @@
+.Sec{
+	border-bottom: 1px solid #000000;
+}
+
+#personAst {
+	padding-left: 300px;
+}
+
+.prices{
+	text-align: right;
+}
+
+#ApButn {
+	border-radius: 50px;
+}
+
+.butn{
+	margin-left: 70px;
+}
+
+#NameInfo {
+	padding-top: 0px;
+}
+
+#BusinessInfo{
+	padding-top: 50px;
+}
+
+#ChangePersonButn{
+	float: right;
+	margin-right: 50px;
+}
+
+.personInfo {
+	display: none;
+}
+
+/* Model Styles */
+
+#AddPerson {
+	padding-right: 30%;
+}
+
+#ModalSize {
+	align-self: center;
+	width: 1000px;
+	height: 910px;
+	background: #FFFFFF;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#ModalBody input{
+	width: 200px;
+	height: 42px;
+	padding: 4px 8px 4px 8px;
+}
+
+#ModalHeadText {
+	padding-left: 60px;
+}
+
+#ModalBody #InfoSec td{
+	height: 0px;
+	padding-top: 0px;
+}
+
+#CloseBtn{
+	float: left;
+}
+
+#AddBtn{
+	float: right;
+}
+
+#ModalBody .CheckList {
+	width: 15px;
+	float: left;
+	padding: 1px;
+}
+
+#ModalBody #InfoSec #BusinessCol {
+	padding-top: 37px;
+}

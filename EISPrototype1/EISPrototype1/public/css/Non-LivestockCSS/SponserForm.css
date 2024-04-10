@@ -1,0 +1,17 @@
+.CategoryLabel {
+	font-size: 15px;
+	padding-left: 40px;
+	float: none;
+}
+
+.centerTable {
+    margin: auto;
+}
+
+#centerText {
+    text-align: center;
+}
+
+.hideInput {
+    display: none;
+}
