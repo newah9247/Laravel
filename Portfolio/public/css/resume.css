@@ -1,0 +1,70 @@
+#container {
+    width: 100%; 
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: #000000;
+
+}
+
+.skills {
+    text-align: right; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    color: black; 
+    border-radius: 7px;
+    padding-right: 10px;
+}
+
+/*Languages*/
+.html {
+    width: 100%; 
+    background: linear-gradient(90deg, rgba(240,101,41,1) 50%, rgba(41,101,241,1) 100%);
+}
+.python {
+    width: 85%; 
+    background: linear-gradient(90deg, rgba(255,211,67,1) 35%, rgba(55,118,171,1) 100%);
+}
+.php {
+    width: 75%; 
+    background-color: #8892bf;
+}
+.mysql {
+    width: 75%;
+    background: linear-gradient(90deg, rgba(0,117,143,1) 22%, rgba(242,145,17,1) 69%);
+}
+.js {
+    width: 65%; 
+    background-color: #f7df1e;
+} 
+.java {
+    width: 60%;
+    background: linear-gradient(90deg, rgba(248,152,32,1) 33%, rgba(83,130,161,1) 74%);
+}
+.cp {
+    width: 55%;
+    background: linear-gradient(90deg, rgba(4,79,136,1) 33%, rgba(94,151,208,1) 74%);
+}
+.csharp {
+    width: 45%;
+    background: linear-gradient(90deg, rgba(40,0,104,1) 33%, rgba(161,121,220,1) 74%);
+}
+.c {
+    width: 35%;
+    background: rgba(92,107,192,255);
+
+}
+.ruby {
+    width: 10%;
+    background: #9b111e;
+}
+
+/*Frameworks*/
+.laravel {
+    width: 80%;
+    background: #F05340;
+}
+.rubyonrails {
+    width: 30%;
+    background: #CC0000;
+}

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laravel Livewire Poll</title>
+  <title>Noah Taylor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,37 +13,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   {{-- blade-formatter-disable --}}
-  <style type="text/tailwindcss">
-
-    body {
-      font-family: 'Martian Mono', monospace;
-      background-color: lightgray;
-    }
-
-    .btn {
-      @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
-    }
-
-    label {
-      @apply uppercase text-slate-700 mb-2
-    }
-
-    input, 
-    textarea {
-      @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
-    }
-
-    .error {
-      @apply text-red-500 text-sm
-    }
-
-    .martian-mono-<uniquifier> {
+  <style>
+    .martian-mono {
       font-family: "Martian Mono", monospace;
       font-optical-sizing: auto;
       font-weight: <weight>;
       font-style: normal;
       font-variation-settings:
         "wdth" 100;
+    }
+
+    body {
+      font-family: 'Martian Mono', monospace;
     }
 
     footer {
@@ -81,6 +62,24 @@
         background-color: gray;
         line-height: 1.3;
       }
+    }
+  </style>
+  <style type="text/tailwindcss">
+    .btn {
+      @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
+    }
+
+    label {
+      @apply text-slate-700 mb-2
+    }
+
+    input, 
+    textarea {
+      @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
+    }
+
+    .error {
+      @apply text-red-500 text-sm
     }
   </style>
   {{-- blade-formatter-enable --}}

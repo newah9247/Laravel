@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('scripts')
+    <link rel="stylesheet" href="/css/index.css">
+@endsection
+
 @section('name')
     <h1>Hi,</h1>
     <h1>I'm Noah Taylor</h1>
@@ -11,9 +15,7 @@
 
 <div class="gridPhoto">
     <div class="project"><img src="{{ asset('/images/img1.jpg') }}" alt="image 1"></div>
-    <div class="photoText">fortnite</div>
     <div class="project"><img src="{{ asset('/images/img2.jpg') }}" alt="image 1"></div>
-    <div class="photoText">fortnite</div>
     <div class="project"><img src="{{ asset('/images/img3.jpg') }}" alt="image 1"></div>
 </div>
 
@@ -42,54 +44,7 @@
 </div>
 
 <style>
-    .gridPhoto > .project > img {
-        width: 400px;
-        height: 700px;
-    }
-
-    .grid1 > .project > a > img {
-        width: 500px;
-        height: 300px;
-    }
-
-    .grid1 {
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(500px, 1fr));
-        grid-template-rows: repeat(2, minmax(300px, 1fr));
-        justify-content: center;
-        text-align: center;
-    }
-
-    .gridPhoto {
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(5, minmax(400px, 1fr));
-        grid-template-rows: repeat(1, minmax(700px, 1fr));
-        justify-content: center;
-    }
-
-    .project {
-        border: rgb(245, 112, 64) 5px solid;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease; /* Add transition effect */
-        margin: 30px;
-    }
-
-    .photoText {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease; /* Add transition effect */
-        margin: 30px;
-    }
-
-    .project:hover {
-        transform: scale(1.10); /* Increase size by 5% on hover */
-    }
+    
 </style>
 @endsection
 
