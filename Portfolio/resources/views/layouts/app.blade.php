@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Noah Taylor</title>
+  <title>📎Noah Taylor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Pokedex-Web-Component/dist/pokedex-wc.min.js" defer></script> 
 
   {{-- blade-formatter-disable --}}
   <style>
@@ -25,6 +26,7 @@
 
     body {
       font-family: 'Martian Mono', monospace;
+      
     }
 
     footer {
@@ -64,6 +66,7 @@
       }
     }
   </style>
+
   <style type="text/tailwindcss">
     .btn {
       @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
@@ -90,21 +93,21 @@
   <div class="container mx-auto mt-10 mb-10 max-w-4xl">
       @yield('scripts')
       @yield('name')
+      @yield('resumeDownload')
+      @yield('about')
       @yield('content')
       @yield('projects')
   </div>
-  
 
   <footer>
     <div>
       <ul>
-        <li><a href="https://twitter.com/newah9247">X</a></li>
-        <li><a href="https://codepen.io/Noah-Taylor">Codepen</a></li>
-        <li><a href="mailto:nwtaylor04@gmail.com">Email</a></li>
-        <li><a href="https://github.com/newah9247">Github</a></li>
-        <li>
-          <p>👋</p>
-        </li>
+        <li><a href="https://twitter.com/newah9247">instagram📱</a></li>
+        <li><a href="https://codepen.io/Noah-Taylor">codepen🖊️ (wip)</a></li>
+        <li><a href="mailto:nwtaylor04@gmail.com">email🖨️</a></li>
+        <li><a href="https://github.com/newah9247">github📁</a></li>
+        <li><a href="https://gitlab.com/newah9247">gitlab (wip)</a></li>
+        <li><a href="https://www.linkedin.com/in/noah-taylor9247/">linkedin</a></li>
       </ul>
     </div>
   </footer>

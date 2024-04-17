@@ -4,6 +4,13 @@
     <link rel="stylesheet" href="{{ asset('/css/resume.css') }}">
 @endsection
 
+@section('resumeDownload')
+<a class="flex justify-center" href="/resume/NoahTaylorResume.pdf" download="NoahTaylorResume.pdf">
+    <button class="flex justify-center text-blue-500"><b>click here to download my resume!</b></button>
+</a>
+@endsection
+
+
 @section('content')
     <h1 class="mb-4 mt-4 text-4xl text-center text-orange-400">work experience</h1>
         <br>
@@ -132,10 +139,4 @@
         <div id="container">
             <div class="skills rubyonrails">30%</div>
         </div>
-
-        
-
-<style>
-
-</style>
 @endsection
